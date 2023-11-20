@@ -1,0 +1,1 @@
+/Users/ngakangandhi/study/rust-learnings/traits/tweet_summary/target/debug/tweet_summary: /Users/ngakangandhi/study/rust-learnings/traits/tweet_summary/src/lib.rs /Users/ngakangandhi/study/rust-learnings/traits/tweet_summary/src/main.rs
