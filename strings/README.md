@@ -26,3 +26,16 @@ It's simply a reference to a `String`. It is not an owned type and its size know
 Because it's not an owned type, we can pass it around, as long as the thing we are referencing does not go out of scope and we do not need to worry about allocations.
 
 `&String` can be deref-coerced to `&str` by the Rust compiler, but it does not work the other way around.
+
+## `&str`
+`&str` is only a pointer of `str` into memory (as well as size) -> its size is known at compile time. Note that `str` (a string slice) has an unknown size at compile time, but it is not dynamic in nature, so its capacity cannot be changed.
+
+The memory can be on the heap, the stack, or static directly from the executable.
+
+It's not an owned type, but rather a read-only reference to a string slice. Rust guarantees that while the `&str` is in scope, the underlying memory does not change, even across threads.
+
+Since `&String` can be coerced to `&str`, it makes `&str` a great candidate for function arguments, if mutability and ownership are not required.
+
+The memory the `&str` points to cannot be changed while the `&str` is in existence, even by the owner of the `str`
+
+It's best used when a slice (view) of a string is needed, which does not need to be changed.
